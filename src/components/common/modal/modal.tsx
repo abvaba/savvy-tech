@@ -1,5 +1,5 @@
 import {useSelector} from "react-redux";
-import {modalSelector} from "@store/slices/modal-slice.ts";
+import {modalSelector} from "@store/slices/modal-slice";
 import _ from './modal.module.scss';
 const Modal = ({...props}) => {
   const {children} = props;

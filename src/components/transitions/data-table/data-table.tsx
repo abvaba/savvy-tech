@@ -2,11 +2,11 @@ import {Table} from "@components/common";
 import {useDeleteItemMutation, useGetItemsQuery} from "@store/items-api";
 import {Guage, Pen, Trash, Calendar, Clock, Loading} from "@components/icons";
 import {NoData} from "@components/transitions";
-import {useEffect, useState} from "react";
+import {useState} from "react";
 import {formatDate, formatTime} from "@utils";
 import {useDispatch} from "react-redux";
 import {openModal} from "@store/slices/modal-slice";
-import {item} from '@types/item'
+import type {Item} from '@types';
 import {setFormData} from "@store/slices/form-slice";
 import Lottie from "react-lottie";
 import animationData from '@assets/Searching.json';
@@ -22,19 +22,13 @@ const DataTable = () => {
   };
   const {
     data,
-    isLoading,
-    error,
-    refetch
+    isLoading
   } = useGetItemsQuery();
   const [deleteItem] = useDeleteItemMutation();
   const [deletingIds, setDeletingIds] = useState<Set<string>>(new Set());
-
-  useEffect(() => {
-    console.log(data, isLoading, error, refetch, 'dier')
-  }, [data, error, isLoading, refetch]);
   const dispatch = useDispatch();
 
-  const openEditModal = (data: item) => {
+  const openEditModal = (data: Item) => {
     dispatch(openModal({title: `edit ${data.title}`}));
     dispatch(setFormData({
       id: data.id,
@@ -103,7 +97,7 @@ const DataTable = () => {
         options={defaultOptions}
         height={200}
         width={600}
-      /> : data.length === 0
+      /> : data?.length === 0
         ? <div className={_.noDataSection}><NoData /><h6>There is no data to show!</h6></div>
         : <Table {...info} />
       }

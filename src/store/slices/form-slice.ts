@@ -21,6 +21,6 @@ const formSlice = createSlice({
 
 export const {resetFormData, setFormData} = formSlice.actions;
 
-const formSelector = state => state.form;
+const formSelector = (state: {form: typeof initialState}) => state.form;
 
 export {formSlice, formSelector};

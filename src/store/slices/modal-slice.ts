@@ -19,6 +19,6 @@ const modalSlice = createSlice({
 
 export const {closeModal, openModal} = modalSlice.actions;
 
-const modalSelector = state => state.modal;
+const modalSelector = (state: {modal: typeof initialState}) => state.modal;
 
 export {modalSlice, modalSelector};

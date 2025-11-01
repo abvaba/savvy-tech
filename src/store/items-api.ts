@@ -8,7 +8,7 @@ import {
   type FetchBaseQueryMeta
 } from '@reduxjs/toolkit/query/react';
 
-import { Item, ItemFormData } from '@types/item';
+import type {Item, ItemFormData } from '@types';
 
 export const itemsApi = createApi({
   reducerPath: 'itemsApi',
@@ -42,7 +42,7 @@ export const itemsApi = createApi({
         method: 'PUT',
         body: data,
       }),
-      invalidatesTags: (result, error, { id }) => [
+      invalidatesTags: (_result, _error, { id }) => [
         { type: 'items', id },
         'items',
       ],
