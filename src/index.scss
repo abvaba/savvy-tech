@@ -1,0 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.btn{
+  @apply h-10 inline-flex place-content-center place-items-center gap-1 rounded-md px-3 border-none text-base font-medium align-middle leading-normal transition-colors whitespace-nowrap cursor-pointer;
+}

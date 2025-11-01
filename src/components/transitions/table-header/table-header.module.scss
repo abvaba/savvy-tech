@@ -1,0 +1,9 @@
+.wrapper{
+  @apply w-full mb-4 flex flex-row flex-wrap items-center justify-between;
+  h3{
+    @apply text-xl font-semibold text-gray-600;
+  }
+}
+.addBtn{
+  @apply bg-slate-700 text-gray-50 hover:bg-slate-800;
+}

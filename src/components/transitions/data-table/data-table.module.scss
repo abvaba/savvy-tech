@@ -1,0 +1,48 @@
+.wrapper{
+  @apply w-full overflow-x-auto;
+}
+.noDataSection{
+  @apply w-full flex flex-col items-center justify-center;
+  svg{
+    @apply h-[350px];
+  }
+  h6{
+    @apply text-xl font-semibold text-gray-600;
+  }
+}
+.headCell{
+  @apply px-4 py-3 text-sm font-semibold text-gray-900 border-b border-gray-200;
+}
+.headCellActionWrapper {
+  @apply text-center px-4 py-3 text-violet-500 font-semibold border-b border-gray-200;
+  span{
+    @apply inline-flex flex-row items-center justify-center w-full;
+  }
+}
+.row{
+  @apply transition-colors duration-150 ease-in-out border-b border-gray-100 last:border-b-0 hover:bg-gray-100 text-sm;
+}
+.bodyCell{
+  @apply text-sm font-normal text-gray-700 whitespace-nowrap;
+}
+.subTitleCell{
+  @apply px-4 py-3 w-full;
+}
+.dateCreatedCell{
+  @apply inline-flex flex-row items-center justify-center gap-2 text-blue-500;
+}
+.dateCreatedCellItem{
+  @apply inline-flex flex-row items-center justify-center w-36 gap-1 bg-blue-500/15 py-1 px-4 rounded;
+}
+.actionCellWrapper{
+  @apply inline-flex flex-row items-center justify-center gap-2;
+}
+.actionBtn{
+  @apply w-8 h-8 rounded inline-flex place-items-center place-content-center transition-colors disabled:cursor-not-allowed disabled:bg-gray-500/15;
+}
+.actionBtnDelete{
+  @apply text-red-500 bg-red-500/15  hover:text-red-700 hover:bg-red-700/15;
+}
+.actionBtnEdit{
+  @apply text-green-500 bg-green-500/15  hover:text-green-700 hover:bg-green-700/15 disabled:text-gray-500;
+}

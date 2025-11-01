@@ -1,0 +1,24 @@
+.formActions{
+  @apply w-full flex flex-row items-center justify-end gap-4;
+}
+.submitBtn{
+  @apply w-36 text-violet-50 bg-violet-500 shadow-lg shadow-violet-500/50 hover:shadow-violet-500/70 hover:bg-violet-600 transition-all duration-300 disabled:bg-gray-500 disabled:cursor-not-allowed disabled:shadow-none;
+}
+.cancelBtn{
+  @apply bg-gray-200 text-slate-600 hover:bg-gray-300;
+}
+.formGroup{
+  @apply flex flex-col items-start justify-start gap-1;
+}
+.fieldLabel{
+  @apply text-sm font-normal text-gray-700;
+}
+.field{
+  @apply border w-full rounded-md p-1 focus:outline-none focus:ring-0 placeholder:text-gray-300 text-base text-gray-700;
+}
+.errorWrapper{
+  @apply w-full flex flex-row items-center justify-end text-xs font-light;
+}
+.errorMessage{
+  @apply me-auto text-red-500;
+}
